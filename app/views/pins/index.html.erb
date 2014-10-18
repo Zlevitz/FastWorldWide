@@ -7,6 +7,11 @@
       <div class="panel-body" >
         <p><%= pin.description %></p>
         <p><strong><%= pin.user.name if pin.user %></strong></p>
+        Current Score: <%= pin.score %>
+        <div class ="Voting">
+          <%= link_to "upvote", like_pin_path(pin), method: :put %>
+          <%= link_to "downvote", dislike_pin_path(pin), method: :put %>
+        </div>
 
         <% if pin.user == current_user && user_signed_in? %>
           <div class="actions">

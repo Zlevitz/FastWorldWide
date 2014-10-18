@@ -32,6 +32,8 @@ gem 'masonry-rails', '~>0.2.0'
 # pagination of pages
 gem 'will_paginate', '~>3.0'
 gem 'will_paginate-bootstrap'
+# Voting App
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
