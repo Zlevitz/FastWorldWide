@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :comments, :only => [:create, :destroy]
+
   devise_for :users
   root "pins#index"
   get "about" => "pages#about" # creates about_path

@@ -1,11 +1,15 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :score]
+  before_action :set_pin, only: [ :edit, :update, :destroy, :upvote, :downvote, :score]
 
   def index
+    @top = Pin.highest_voted.limit(5)
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 50)
   end
 
   def show
+    @pin = Pin.find(params[:id])
+    @comments = @pin.comment_threads.order('created_at desc')
+    @new_comment = Comment.build_from(@pin, current_user.id, "")
   end
 
   def new

@@ -10,6 +10,12 @@
         <p><%= @pin.description %></p>
         <p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
+        Current Score: <%= @pin.score %>
+        <div class ="Voting">
+          <%= link_to "Up Vote", like_pin_path(@pin), method: :put %>
+          <%= link_to "Down Vote", dislike_pin_path(@pin), method: :put %>
+        </div>
+
         <% if @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>
         		<span class="glyphicon glyphicon-edit"></span>
@@ -17,6 +23,10 @@
       		<% end %>
         <% end %>
       </div>
+      <%# <div class = "Comments"> %>
+        <%# render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+        <%# render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+      <%#</div> %>
     </div>
 
   </div>

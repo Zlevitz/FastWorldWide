@@ -1,5 +1,40 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
+<h1 id="topvoted" class="page-header">Top 5</h1>
+
+<div id="toppins" class="transitions-enabled">
+  <% @top.each do |pin| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(pin.image.url(:medium)), pin %>
+      <div class="panel-body" >
+        <p><%= pin.description %></p>
+        <p><strong><%= pin.user.name if pin.user %></strong></p>
+        Current Score: <%= pin.score %>
+        <div class ="Voting">
+          <%= link_to "Up Vote", like_pin_path(pin), method: :put %>
+          <%= link_to "Down Vote", dislike_pin_path(pin), method: :put %>
+        </div>
+
+        <% if pin.user == current_user && user_signed_in? %>
+          <div class="actions">
+            <%= link_to edit_pin_path(pin) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<h2 id="mostreceent" class="page-header">Recently Added</h2>
+
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
@@ -9,8 +44,8 @@
         <p><strong><%= pin.user.name if pin.user %></strong></p>
         Current Score: <%= pin.score %>
         <div class ="Voting">
-          <%= link_to "upvote", like_pin_path(pin), method: :put %>
-          <%= link_to "downvote", dislike_pin_path(pin), method: :put %>
+          <%= link_to "Up Vote", like_pin_path(pin), method: :put %>
+          <%= link_to "Down Vote", dislike_pin_path(pin), method: :put %>
         </div>
 
         <% if pin.user == current_user && user_signed_in? %>
@@ -32,5 +67,7 @@
 </div>
 
 <div class="center">
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
+  <%# Was the following line.  Changed posts to Pins%>
+  <%# will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>

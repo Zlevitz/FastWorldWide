@@ -1,14 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-$body-bg:                                                   #ecf0f1;
-$font-family-sans-serif:                'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                                        45px;
-$navbar-default-bg:                          white;
-$navbar-default-brand-color:      #f39c12;
-$brand-primary:                                    #f39c12;
-$jumbotron-bg:                                         white;
+//$body-bg:                       #ecf0f1;
+$font-family-sans-serif:          'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:                   45px;
+$navbar-default-bg:               #ecf0f1;
+$navbar-default-brand-color:      #3498db;
+$brand-primary:                   #3498db;
+$jumbotron-bg:                    white;
 
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 .center {
      text-align: center;

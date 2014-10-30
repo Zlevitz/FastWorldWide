@@ -3,6 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+	$('#toppins').imagesLoaded ->
+		$('#toppins').masonry
+			itemSelector: '.box'
+			isFitWidth: true
+
+$ ->
 	$('#pins').imagesLoaded ->
 		$('#pins').masonry
 			itemSelector: '.box'

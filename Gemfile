@@ -34,6 +34,10 @@ gem 'will_paginate', '~>3.0'
 gem 'will_paginate-bootstrap'
 # Voting App
 gem 'acts_as_votable', '~> 0.10.0'
+# Commenting with threads
+gem 'acts_as_commentable_with_threading', '~> 2.0.0'
+# Simple Forms which is used for comments
+gem 'simple_form', '~> 3.0.2'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
