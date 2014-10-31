@@ -13,7 +13,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.collection_select :site, Site.all, :location, :location, :selected => @user.site%>
+        <%= f.collection_select :site, Site.all, :id, :location, :selected => @user.site%>
       </div>
 
       <div class="form-group">
