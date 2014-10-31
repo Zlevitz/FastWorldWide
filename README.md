@@ -1,5 +1,5 @@
-# One Month Rails
+# Fast World Wide
 
-This is the pinteresting sample application for [*One Month Rails*](http://onemonthrails.com)
+This is the pinterest like application for all Fasties to use and modify.  Feel free to contact me about becoming a contributor.
 
-By [Zachary Levitz](http://bluewire.co)
+By Zachary Levitz

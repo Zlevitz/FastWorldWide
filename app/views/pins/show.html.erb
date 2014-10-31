@@ -4,7 +4,7 @@
   <div class="col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading center">
-        <%= image_tag @pin.image.url(:medium) %>
+        <%= image_tag @pin.image.url() %>
       </div>
       <div class="panel-body">
         <p><%= @pin.description %></p>
@@ -21,6 +21,10 @@
         		<span class="glyphicon glyphicon-edit"></span>
         		Edit
       		<% end %>
+          <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
         <% end %>
       </div>
       <%# <div class = "Comments"> %>
