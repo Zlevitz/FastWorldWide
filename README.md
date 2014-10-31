@@ -6,8 +6,8 @@ By Zachary Levitz
 
 ##To Do
 * Turn off pagination and go to infinite scroll
-..* Find generic loading gif
+** Find generic loading gif
 * As screen shrinks "Top" reduces in number
-* At full shrink top turns into just image no box
-* Style the combo box for sites
-..* Add site to the edit accout setting screen
+* At full shrink, "Top" turns into just image no box
+* Have edit screen populate with current name and site
+* If you sign up but then fail the combo box refreshes instead of keeping entry in context

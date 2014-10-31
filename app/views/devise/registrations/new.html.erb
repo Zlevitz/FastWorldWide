@@ -13,7 +13,8 @@
       </div>
 
       <div class="form-group">
-        <%= f.collection_select :site, Site.all, :id, :location, :selected => @user.site%>
+        <%= f.label :site %>
+        <%= f.select(:site, options_for_select(Site.alphabetically.map{|u| [u.location,u.id]}), {}, {class: "form-control"}) %>
       </div>
 
       <div class="form-group">
