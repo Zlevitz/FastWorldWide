@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sites
+
   resources :pins do 
     member do
       put "like", to: "pins#upvote"

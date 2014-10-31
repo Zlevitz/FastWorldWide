@@ -13,6 +13,7 @@ class PinsController < ApplicationController
   end
 
   def new
+    @site_options = Site.all.map{|u| [u.location,u.id]}
     @pin = current_user.pins.build
   end
 
